@@ -1,0 +1,89 @@
+<DOCTYPE html!> <!--b307s339k13 !-->
+<html>
+<head>
+<meta charset="Utf-8">
+<title>Задание 2 </title>
+</head>
+<body>
+<style>
+#per{
+	background: #CDF76F;
+	position: absolute;
+	top: 30%;
+	width: 300px;
+	height: 75px;
+	font-size: 30px
+}
+p{
+	font-size: 30px;
+}
+input{
+	width: 250px;
+	font-size: 30px;
+    text-align: left;
+	border: 2px solid black;
+	position: relative;
+	left: 2%;
+}
+
+tr,th{
+	width: 250px;
+	font-size: 30px;
+    text-align: left;
+	border: 2px solid black;
+}
+</style>
+<p>Имя:<input class="n" id="Name" type="text"/></p>
+<p>Телефон:<input class="n" id="Phone" type="text"></p>
+<p>Email:<input class="n" id="Email" type="text"></p><br><br>
+<button id="per" onclick="obj(document.getElementsByClassName('n').value)">Задайте параметры и нажмите</button><br><br>
+<table id="tabl">
+	<tr>
+		<th>Имя:</th>
+		<th>Телефон:</th>
+		<th>Email:</th>
+	</tr>
+</table>
+
+<script>
+	var arr = [];//массив в котором все данные 
+	var j = 1;
+function obj(){
+	var elem = document.createElement("tr");
+	document.getElementById('tabl').appendChild(elem);//создаем строку в таблице
+
+	var user = document.getElementById("Name").value;  //получаем элемент строки
+	var user2 = document.getElementById("Phone").value;//получаем элемент строки
+	var user3 = document.getElementById("Email").value;//получаем элемент строки
+	
+	object.name = user;  //принимает значение полученной строки
+	object.phone = user2;//принимает значение полученной строки
+	object.email = user3;//принимает значение полученной строки
+	 
+	 var elem = document.createElement('th');
+	 elem.innerHTML = j+")" + object.name;
+	 document.getElementById('tabl').appendChild(elem);//создаю столбец с значением обьекта внутри
+	 j++;
+
+	 var elem = document.createElement('th');
+	 elem.innerHTML = object.phone;
+	 document.getElementById('tabl').appendChild(elem);//создаю столбец с значением обьекта внутри
+	 
+	 var elem = document.createElement('th');
+	 elem.innerHTML = object.email;
+	 document.getElementById('tabl').appendChild(elem);//создаю столбец с значением обьекта внутри
+
+	 arr.push(object.name, object.phone, object.email);//заношу в массив данные обьекта
+}
+
+
+	var object = { //шаблон (обьект)
+		name: "pasha",
+		phone: "apple",
+		email: "mail"
+	};
+</script>
+</body>
+
+
+</html>
